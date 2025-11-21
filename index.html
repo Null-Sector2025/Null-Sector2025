@@ -41,6 +41,7 @@
             z-index: 1000;
         }
 
+        /* 桌面版样式 */
         .desktop {
             width: 1280px;
             min-height: 720px;
@@ -49,7 +50,15 @@
             position: relative;
         }
 
-        /* 顶部状态栏 - 已更新为2025版本 */
+        /* 手机版样式 */
+        .mobile {
+            width: 100%;
+            min-height: 100vh;
+            padding: 15px;
+            display: none; /* 默认隐藏 */
+        }
+
+        /* 顶部状态栏 */
         .status-bar {
             background: rgba(20, 20, 20, 0.95);
             border: 1px solid #00ff00;
@@ -63,6 +72,13 @@
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
         }
 
+        .mobile-status-bar {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            padding: 15px;
+        }
+
         .logo {
             font-size: 1.4rem;
             font-weight: bold;
@@ -73,11 +89,22 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .mobile-logo {
+            font-size: 1.2rem;
+        }
+
         .system-info {
             display: flex;
             gap: 25px;
             font-size: 0.9rem;
             color: #888;
+        }
+
+        .mobile-system-info {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.8rem;
         }
 
         .year-badge {
@@ -97,7 +124,13 @@
             height: 650px;
         }
 
-        /* 左侧导航增强 */
+        .mobile-main-content {
+            grid-template-columns: 1fr;
+            height: auto;
+            gap: 20px;
+        }
+
+        /* 左侧导航 */
         .sidebar {
             background: rgba(25, 25, 25, 0.9);
             border: 1px solid #333;
@@ -105,6 +138,10 @@
             padding: 25px;
             backdrop-filter: blur(10px);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-sidebar {
+            padding: 20px;
         }
 
         .nav-item {
@@ -117,6 +154,11 @@
             border-radius: 6px;
             display: flex;
             align-items: center;
+        }
+
+        .mobile-nav-item {
+            padding: 12px 15px;
+            font-size: 0.9rem;
         }
 
         .nav-item:hover, .nav-item.active {
@@ -133,7 +175,12 @@
             text-align: center;
         }
 
-        /* 中央内容区增强 */
+        .mobile-nav-icon {
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        /* 中央内容区 */
         .content-area {
             background: rgba(20, 20, 20, 0.85);
             border: 1px solid #333;
@@ -142,6 +189,11 @@
             backdrop-filter: blur(10px);
             overflow-y: auto;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-content-area {
+            padding: 20px;
+            overflow-y: visible;
         }
 
         .terminal-window {
@@ -153,6 +205,11 @@
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.05);
         }
 
+        .mobile-terminal-window {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
         .terminal-header {
             color: #00ffff;
             margin-bottom: 18px;
@@ -160,6 +217,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .mobile-terminal-header {
+            font-size: 1rem;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
         }
 
         .terminal-status {
@@ -175,6 +239,11 @@
             line-height: 1.5;
         }
 
+        .mobile-command-line {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
         .prompt {
             color: #00ff00;
             font-weight: bold;
@@ -188,7 +257,7 @@
             animation: blink 1s infinite;
         }
 
-        /* 右侧信息面板增强 */
+        /* 右侧信息面板 */
         .info-panel {
             background: rgba(25, 25, 25, 0.9);
             border: 1px solid #333;
@@ -198,8 +267,16 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
+        .mobile-info-panel {
+            padding: 20px;
+        }
+
         .panel-section {
             margin-bottom: 30px;
+        }
+
+        .mobile-panel-section {
+            margin-bottom: 25px;
         }
 
         .panel-title {
@@ -211,6 +288,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .mobile-panel-title {
+            font-size: 1rem;
+            margin-bottom: 15px;
         }
 
         .social-links {
@@ -228,6 +310,11 @@
             color: #ccc;
             text-decoration: none;
             transition: all 0.3s ease;
+        }
+
+        .mobile-social-link {
+            padding: 10px 12px;
+            font-size: 0.9rem;
         }
 
         .social-link:hover {
@@ -253,6 +340,11 @@
             transition: all 0.3s ease;
         }
 
+        .mobile-member-card {
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
         .member-card:hover {
             border-color: #00ff00;
             transform: translateX(5px);
@@ -264,6 +356,10 @@
             font-size: 1rem;
             margin-bottom: 8px;
             font-weight: bold;
+        }
+
+        .mobile-member-name {
+            font-size: 0.9rem;
         }
 
         .member-role {
@@ -307,6 +403,12 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
         }
 
+        .mobile-taskbar {
+            bottom: 10px;
+            padding: 8px 15px;
+            gap: 10px;
+        }
+
         .taskbar-item {
             padding: 10px 15px;
             border-radius: 6px;
@@ -319,10 +421,52 @@
             gap: 8px;
         }
 
+        .mobile-taskbar-item {
+            padding: 8px 12px;
+            font-size: 0.8rem;
+        }
+
         .taskbar-item:hover {
             background: rgba(0, 255, 0, 0.15);
             color: #00ff00;
             transform: translateY(-2px);
+        }
+
+        /* 手机版底部导航 */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(20, 20, 20, 0.95);
+            border-top: 1px solid #333;
+            padding: 10px;
+            display: none;
+            justify-content: space-around;
+            backdrop-filter: blur(15px);
+            z-index: 1001;
+        }
+
+        .mobile-nav-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 12px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .mobile-nav-btn.active {
+            color: #00ff00;
+            background: rgba(0, 255, 0, 0.1);
+        }
+
+        .mobile-nav-icon {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
         }
 
         /* 动画效果 */
@@ -352,36 +496,28 @@
         /* 响应式设计 */
         @media (max-width: 768px) {
             .desktop {
-                width: 100%;
-                min-height: 100vh;
-                padding: 15px;
+                display: none;
             }
-            
-            .main-content {
-                grid-template-columns: 1fr;
-                height: auto;
-                gap: 20px;
-            }
-            
-            .sidebar, .info-panel {
+            .mobile {
                 display: block;
             }
-            
-            .status-bar {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+            .mobile-bottom-nav {
+                display: flex;
             }
-            
-            .system-info {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
             .taskbar {
-                bottom: 10px;
-                padding: 8px 15px;
-                gap: 10px;
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .desktop {
+                display: block;
+            }
+            .mobile {
+                display: none;
+            }
+            .mobile-bottom-nav {
+                display: none;
             }
         }
 
@@ -402,13 +538,35 @@
                 display: block;
             }
         }
+
+        /* 手机版菜单切换 */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            border-radius: 6px;
+            padding: 10px;
+            color: #00ff00;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="scroll-hint">← 左右滑动浏览 →</div>
-    
+    <!-- 桌面版 -->
     <div class="desktop">
-        <!-- 顶部状态栏 - 2025版本 -->
+        <div class="scroll-hint">← 左右滑动浏览 →</div>
+        
+        <!-- 顶部状态栏 -->
         <div class="status-bar">
             <div class="logo">NULL SECTOR 2025 :: 虚空象限</div>
             <div class="system-info">
@@ -566,7 +724,169 @@
         </div>
     </div>
 
-    <!-- 底部任务栏 -->
+    <!-- 手机版 -->
+    <div class="mobile">
+        <!-- 移动端菜单切换按钮 -->
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">☰</div>
+
+        <!-- 顶部状态栏 -->
+        <div class="status-bar mobile-status-bar">
+            <div class="logo mobile-logo">NULL SECTOR 2025</div>
+            <div class="system-info mobile-system-info">
+                <span>> 状态: <span class="glowing">在线</span></span>
+                <span>> 协议: 海兔 v2.0</span>
+                <span id="mobileCurrentTime">--:--:--</span>
+                <span class="year-badge">2025</span>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content mobile-main-content">
+            <!-- 左侧导航 -->
+            <div class="sidebar mobile-sidebar" id="mobileSidebar">
+                <div class="nav-item mobile-nav-item active">
+                    <span class="nav-icon mobile-nav-icon">🏠</span>控制中心
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <span class="nav-icon mobile-nav-icon">📁</span>项目档案
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <span class="nav-icon mobile-nav-icon">🔧</span>开发工具
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <span class="nav-icon mobile-nav-icon">📡</span>通信中心
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <span class="nav-icon mobile-nav-icon">🔒</span>加密文档
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <span class="nav-icon mobile-nav-icon">🌐</span>网络监控
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <span class="nav-icon mobile-nav-icon">⚙️</span>系统设置
+                </div>
+            </div>
+
+            <!-- 中央内容区 -->
+            <div class="content-area mobile-content-area">
+                <div class="terminal-window mobile-terminal-window">
+                    <div class="terminal-header mobile-terminal-header">
+                        > 系统终端 [权限: 观察者]
+                        <span class="terminal-status">NULL SECTOR 2025</span>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">null-sector-2025:~$ </span>
+                        <span id="mobileTypingText"></span>
+                        <span class="cursor"></span>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 正在初始化虚空协议 v2.0...
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 连接至主数据库... <span class="glowing">成功</span>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 安全检测: 所有系统正常
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 欢迎来到 Null Sector 2025
+                    </div>
+                </div>
+
+                <div class="terminal-window mobile-terminal-window">
+                    <div class="terminal-header mobile-terminal-header">
+                        > 项目状态监控
+                        <span class="terminal-status">实时更新</span>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 海兔协议 v2.0: <span class="glowing">开发中</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 虚空引擎: <span class="glowing">运行中</span> [状态: 稳定]
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 数据同步: <span class="glowing">活跃</span> [最后更新: 刚刚]
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 社区连接: <span class="glowing">正常</span> [成员: 持续增长]
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧信息面板 -->
+            <div class="info-panel mobile-info-panel">
+                <div class="panel-section mobile-panel-section">
+                    <div class="panel-title mobile-panel-title">
+                        社交频道
+                        <span class="floating">🌐</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://pd.qq.com/s/fad8j5m6n?b=9" class="social-link mobile-social-link" target="_blank">
+                            <span class="social-icon">💬</span>
+                            腾讯频道
+                        </a>
+                        <a href="https://b23.tv/U1Du8dT" class="social-link mobile-social-link" target="_blank">
+                            <span class="social-icon">🎬</span>
+                            哔哩哔哩
+                        </a>
+                        <a href="https://github.com/Null-Sector" class="social-link mobile-social-link" target="_blank">
+                            <span class="social-icon">⚡</span>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="panel-section mobile-panel-section">
+                    <div class="panel-title mobile-panel-title">
+                        核心成员
+                        <span class="floating">👥</span>
+                    </div>
+                    <div class="member-card mobile-member-card">
+                        <div class="member-name mobile-member-name">[VOID WALKER]</div>
+                        <div class="member-role">核心架构师</div>
+                    </div>
+                    <div class="member-card mobile-member-card">
+                        <div class="member-name mobile-member-name">[CRYPTIC FLOW]</div>
+                        <div class="member-role">视觉缔造者</div>
+                    </div>
+                    <div class="member-card mobile-member-card">
+                        <div class="member-name mobile-member-name">[ECHO PROTOCOL]</div>
+                        <div class="member-role">叙事工程师</div>
+                    </div>
+                </div>
+
+                <div class="panel-section mobile-panel-section">
+                    <div class="panel-title mobile-panel-title">
+                        系统资源
+                        <span class="floating">📊</span>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> CPU: <span class="glowing">78%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 内存: <span class="glowing">95%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="command-line mobile-command-line">
+                        <span class="prompt">></span> 网络: <span class="glowing">62%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 62%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 桌面版任务栏 -->
     <div class="taskbar">
         <div class="taskbar-item">
             <span>🚀</span>开始
@@ -588,38 +908,67 @@
         </div>
     </div>
 
+    <!-- 手机版底部导航 -->
+    <div class="mobile-bottom-nav">
+        <a href="#" class="mobile-nav-btn active">
+            <span class="mobile-nav-icon">🏠</span>
+            <span>首页</span>
+        </a>
+        <a href="#" class="mobile-nav-btn">
+            <span class="mobile-nav-icon">📁</span>
+            <span>项目</span>
+        </a>
+        <a href="#" class="mobile-nav-btn">
+            <span class="mobile-nav-icon">📡</span>
+            <span>社区</span>
+        </a>
+        <a href="#" class="mobile-nav-btn">
+            <span class="mobile-nav-icon">⚙️</span>
+            <span>设置</span>
+        </a>
+    </div>
+
     <script>
+        // 设备检测
+        function isMobileDevice() {
+            return window.innerWidth <= 768;
+        }
+
         // 打字机效果
-        const typingTextElement = document.getElementById('typing-text');
-        const texts = [
-            "初始化 Null Sector 2025...",
-            "加载虚空协议 v2.0...",
-            "系统就绪，等待指令...",
-            "Welcome to the Void..."
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+        function initializeTypingEffect(elementId) {
+            const typingTextElement = document.getElementById(elementId);
+            const texts = [
+                "初始化 Null Sector 2025...",
+                "加载虚空协议 v2.0...",
+                "系统就绪，等待指令...",
+                "Welcome to the Void..."
+            ];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
 
-        function type() {
-            const currentText = texts[textIndex];
+            function type() {
+                const currentText = texts[textIndex];
 
-            if (isDeleting) {
-                typingTextElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingTextElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
+                if (isDeleting) {
+                    typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingTextElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    setTimeout(() => isDeleting = true, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                }
+
+                setTimeout(type, isDeleting ? 50 : 100);
             }
 
-            if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
-
-            setTimeout(type, isDeleting ? 50 : 100);
+            setTimeout(type, 1000);
         }
 
         // 更新时间
@@ -631,22 +980,33 @@
                 minute: '2-digit',
                 second: '2-digit'
             });
-            document.getElementById('currentTime').textContent = timeString;
+            
+            if (isMobileDevice()) {
+                document.getElementById('mobileCurrentTime').textContent = timeString;
+            } else {
+                document.getElementById('currentTime').textContent = timeString;
+            }
         }
 
         // 页面加载
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(type, 1000);
+            // 根据设备初始化打字效果
+            if (isMobileDevice()) {
+                initializeTypingEffect('mobileTypingText');
+            } else {
+                initializeTypingEffect('typingText');
+            }
+
             updateTime();
             setInterval(updateTime, 1000);
 
             // 导航点击效果
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.addEventListener('click', function() {
-                    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                    const parent = this.closest('.sidebar');
+                    parent.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // 这里可以添加页面切换逻辑
                     const sectionName = this.textContent.trim();
                     alert(`[系统] 切换到: ${sectionName}`);
                 });
@@ -659,6 +1019,28 @@
                     alert(`[${action}] 功能开发中...`);
                 });
             });
+
+            // 手机版底部导航
+            document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.mobile-nav-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const action = this.querySelector('span:last-child').textContent;
+                    alert(`[${action}] 功能开发中...`);
+                });
+            });
+
+            // 手机版菜单切换
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            
+            if (mobileMenuToggle && mobileSidebar) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileSidebar.style.display = mobileSidebar.style.display === 'none' ? 'block' : 'none';
+                });
+            }
         });
 
         // 手机触摸优化
@@ -670,6 +1052,15 @@
             }
             lastTouchEnd = now;
         }, false);
+
+        // 窗口大小变化时重新初始化
+        window.addEventListener('resize', function() {
+            if (isMobileDevice()) {
+                initializeTypingEffect('mobileTypingText');
+            } else {
+                initializeTypingEffect('typingText');
+            }
+        });
     </script>
 </body>
 </html>
